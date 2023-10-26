@@ -47,13 +47,17 @@ class ListesNumeriques {
         // on parcourt les listes en partant de la fin
         // on ne fait que j iterations si nb2< nb1 et inversement
         while (i >= 0 && j >= 0) {
+            // on recupere les chiffres a additionner
             int n1 = nb1.get(i);
             int n2 = nb2.get(j);
 
+            // on verifie que les chiffres sont valides
             chiffreValide(n1);
             chiffreValide(n2);
 
+            // on calcule la somme et la retenue
             somme = nb1.get(i) + nb2.get(j) + retenue;
+            // on ajoute le chiffre des unites a la liste resultat
             resultat.addFirst(somme % 10);
             retenue = somme / 10;
 
@@ -67,6 +71,8 @@ class ListesNumeriques {
             int n = nb.get(k);
 
             chiffreValide(n);
+
+            // on calcule la somme avec la retenue
             somme = nb.get(k) + retenue;
             resultat.addFirst(somme % 10);
             retenue = somme / 10;
